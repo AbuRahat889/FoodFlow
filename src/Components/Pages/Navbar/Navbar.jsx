@@ -12,8 +12,8 @@ const Navbar = () => {
   );
   
   return (
-    <div className="align">
-      <div className="navbar bg-base-100 ">
+    <div className=" bg-[#febb00]">
+      <div className="navbar align">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -39,14 +39,14 @@ const Navbar = () => {
               {navlink}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">FoodFlow</a>
+          <a className="poetsen btn btn-ghost text-3xl italic">FoodFlow</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navlink}</ul>
         </div>
         <div className="navbar-end">
           <NavLink to={"/"} className='text-xl mr-8 p-4 border-x-2'>Sign in</NavLink>
-          <a className="btn bg-[#febb00]">Donate Now</a>
+          <a className="btn bg-black border-none text-[#febb00]">Donate Now</a>
         </div>
       </div>
       

@@ -1,0 +1,14 @@
+.flow{
+    background-image: linear-gradient(to right,
+    rgba(255, 255, 255, 1) 40%,
+    rgba(255, 255, 255, .7) 50%,
+    rgba(255, 255, 255, .4) 70%,
+    rgba(255, 255, 255, .1) 80%,
+    rgba(255, 255, 255, 0) 100%
+    
+    
+ 
+   
+    
+     );
+}

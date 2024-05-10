@@ -1,4 +1,7 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+.poetsen {
+    font-family: "Poetsen One", sans-serif;
+  }
 
 @tailwind base;
 @tailwind components;
