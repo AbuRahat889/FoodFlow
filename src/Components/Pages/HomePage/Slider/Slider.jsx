@@ -15,7 +15,6 @@ const Slider = () => {
             backgroundImage: "url(https://i.ibb.co/vVk61F2/slide2.webp)",
           }}
         >
-          {/* <div className="hero-overlay bg-opacity-60"></div> */}
           <div className="flow -ml-48 min-h-screen  hero-content text-left text-neutral-content">
             <div className=" text-black -ml-72">
               <h1 className="mb-5 text-7xl font-bold poetsen">
@@ -31,6 +30,8 @@ const Slider = () => {
             </div>
           </div>
         </div>
+
+
         {/* slider 2 */}
         <div
           className="hero min-h-screen"
@@ -52,6 +53,8 @@ const Slider = () => {
             </div>
           </div>
         </div>
+
+        
         {/* slider 03 */}
         <div
           className="hero min-h-screen"
