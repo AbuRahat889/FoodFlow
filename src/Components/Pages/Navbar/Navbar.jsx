@@ -1,7 +1,17 @@
 import { NavLink, Navigate } from "react-router-dom";
 import '../../../../src/App.css';
+import '../Navbar/Navbar.css'
+import { useContext } from "react";
+import { AuthContex } from "../../Contex/AuthProvaider";
+
 
 const Navbar = () => {
+  const {user, logOut} = useContext(AuthContex);
+  //logot btn
+  const handleLogout = ()=>{
+    logOut();
+  }
+  
   const navlink = (
     <div className="text-xl space-x-12">
       <NavLink to={"/"}>Home</NavLink>
@@ -45,7 +55,9 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{navlink}</ul>
         </div>
         <div className="navbar-end">
-          <NavLink to={"/"} className='text-xl mr-8 p-4 border-x-2'>Sign in</NavLink>
+          {
+            user ? (<NavLink onClick={handleLogout}  className='text-xl mr-8 p-4 border-x-2'>Sign out</NavLink>) : (<NavLink to={"/signin"} className='text-xl mr-8 p-4 border-x-2'>Sign in</NavLink>)
+          }
           <a className="btn bg-black border-none text-[#febb00]">Donate Now</a>
         </div>
       </div>
