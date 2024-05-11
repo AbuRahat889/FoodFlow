@@ -6,7 +6,7 @@ import auth from "../firebase";
 export const AuthContex = createContext()
 
 const AuthProvaider = ({ children }) => {
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState([]);
     const [loading , setLoading ] = useState(true);
 
     // create user 
