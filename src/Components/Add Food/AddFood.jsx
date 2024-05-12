@@ -12,7 +12,7 @@ const AddFood = () => {
     const handlaAddFood  = async event =>{
         event.preventDefault();
         const donar_email = user?.email;
-        const donar_name = user?.name;
+        const donar_name = user?.displayName;
         const doner_photo = user?.photoURL;
 
         const form = event.target;

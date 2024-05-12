@@ -8,16 +8,29 @@ import { FcExpired } from "react-icons/fc";
 const Details = () => {
   const { user } = useContext(AuthContex);
   const loader = useLoaderData();
-  console.log(user);
+  const {
+    food_name,
+    image,
+    dedline,
+    quantity,
+    category,
+    location,
+    description,
+    status
+} = loader || {}
+  console.log(loader);
+
+
   return (
     <div className="bg-[#d2d5d6]">
       <div className="align mt-10 py-10">
-        <h1 className="text-6xl font-bold">{loader.Food_Name} </h1>
+        <h1 className="text-6xl font-bold">{food_name} </h1>
 
         <div className="mt-72 flex justify-around">
+         
           <div className="bg-white w-1/2 h-1/2 border rounded-3xl ">
             <div className=" -mt-64 p-10">
-              <img className="rounded-3xl " src={loader.Food_Image} alt="" />
+              <img className="rounded-3xl " src={image} alt="" />
             </div>
 
             <div className=" px-10 pb-5 space-y-2">
@@ -27,12 +40,12 @@ const Details = () => {
                 <div className="flex gap-2 items-center mt-5">
                   <BsPeopleFill className="text-2xl" />
                   <span className="text-xl">
-                    {loader.Food_Quantity} supporters
+                    {quantity} supporters
                   </span>
                 </div>
                 <div className="flex gap-2 items-center mt-5">
                   <FcExpired className="text-2xl" />
-                  <span className="text-xl">{loader.Expired_Date} expired</span>
+                  <span className="text-xl">{new Date(dedline).toLocaleDateString()} expired</span>
                 </div>
               </div>
               <div className="text-left ">
@@ -50,14 +63,14 @@ const Details = () => {
                 </h2>
                 <div className="avatar justify-center">
                   <div className="w-24 rounded-xl">
-                    <img src={user?.photoURL} alt="" />
+                    <img src={loader.donar.photo} alt="" />
                   </div>
                 </div>
 
                 <div className="text-xl font-semibold space-y-3 mt-3">
-                  <h1>Name : {user?.displayName} </h1>
-                  <h1>Email : {user?.email} </h1>
-                  <h1>Pickup Location : {loader.Pickup_Location} </h1>
+                  <h1>Name : {loader.donar.donar_name} </h1>
+                  <h1>Email : {loader.donar.donar_email} </h1>
+                  <h1>Pickup Location : {loader.location} </h1>
                 </div>
               </div>
             </div>
