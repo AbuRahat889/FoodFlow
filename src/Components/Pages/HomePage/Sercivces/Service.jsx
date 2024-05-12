@@ -8,7 +8,7 @@ const Service = () => {
   const [loader, setLoader] = useState([]);
 
   useEffect(() => {
-    axios("http://localhost:5000/services").then((res) => {
+    axios(`${import.meta.env.VITE_SITE_Link}/foods`).then((res) => {
       console.log(res.data);
       setLoader(res.data);
     });

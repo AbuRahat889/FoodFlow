@@ -44,7 +44,7 @@ const AddFood = () => {
         }
         console.table(newFood);
         try{
-            const {data} = await axios.post(`${import.meta.env.VITE_SITE_Link}/services`, newFood)
+            const {data} = await axios.post(`${import.meta.env.VITE_SITE_Link}/food`, newFood)
             // alert('food added successsfully!!!!')
             Swal.fire({
                 title: "Good job!",
@@ -112,8 +112,8 @@ const AddFood = () => {
                     id='category'
                     className='border p-2 rounded-md'
                   >
-                    <option value='Web Development'>Available</option>
-                    <option value='Graphics Design'>Not Available</option>
+                    <option value='Available'>Available</option>
+                    <option value='Not Available'>Not Available</option>
                   </select>
                 </div>
                 <div>
