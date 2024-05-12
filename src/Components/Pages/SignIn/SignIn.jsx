@@ -18,6 +18,9 @@ const SignIn = () => {
     const email = form.email.value;
     const password = form.password.value;
 
+    console.log(email, password);
+    
+
     signIn(email, password)
       .then((result) => {
         const user = result.user;
@@ -67,7 +70,7 @@ const SignIn = () => {
         <div className="">
           <div className="card  w-96  shadow-2xl bg-base-100">
           <h1 className="text-4xl text-center font-semibold mt-5">sign in</h1>
-            <form className="card-body">
+            <form onSubmit={handleSignIn} className="card-body">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -85,6 +88,7 @@ const SignIn = () => {
                   <span className="label-text">Password</span>
                 </label>
                 <input
+                 name="password"
                   type="password"
                   placeholder="password"
                   className="input input-bordered"

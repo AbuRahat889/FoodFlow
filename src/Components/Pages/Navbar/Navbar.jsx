@@ -15,8 +15,8 @@ const Navbar = () => {
   const navlink = (
     <div className="text-xl space-x-12">
       <NavLink to={"/"}>Home</NavLink>
-      <NavLink to={"/"}>Available Foods</NavLink>
-      <NavLink to={"/"}>Add Food</NavLink>
+      <NavLink to={"/availablefoods"}>Available Foods</NavLink>
+      <NavLink to={"/addfood"}>Add Food</NavLink>
       <NavLink to={"/"}>Manage My Foods</NavLink>
     </div>
   );

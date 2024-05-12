@@ -50,13 +50,13 @@ const Details = () => {
                 </h2>
                 <div className="avatar justify-center">
                   <div className="w-24 rounded-xl">
-                    <img src={user.photoURL} alt="" />
+                    <img src={user?.photoURL} alt="" />
                   </div>
                 </div>
 
                 <div className="text-xl font-semibold space-y-3 mt-3">
-                  <h1>Name : {user.displayName} </h1>
-                  <h1>Email : {user.email} </h1>
+                  <h1>Name : {user?.displayName} </h1>
+                  <h1>Email : {user?.email} </h1>
                   <h1>Pickup Location : {loader.Pickup_Location} </h1>
                 </div>
               </div>

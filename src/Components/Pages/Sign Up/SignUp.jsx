@@ -12,10 +12,11 @@ const SignUp = () => {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
+    const photo = form.photo.value;
 
-    console.log(name, email, password);
+    console.log(name, email, password,photo);
 
-    createUser(email, password)
+    createUser(email, password,)
       .then((result) => {
         const user = result.data;
         // alert("user create successfully!!!");
@@ -65,6 +66,19 @@ const SignUp = () => {
                   name="email"
                   type="email"
                   placeholder="email"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
+
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Photo Url</span>
+                </label>
+                <input
+                  name="photo"
+                  type="text"
+                  placeholder="photo url"
                   className="input input-bordered"
                   required
                 />

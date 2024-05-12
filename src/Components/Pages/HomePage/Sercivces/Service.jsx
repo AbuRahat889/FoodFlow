@@ -14,6 +14,19 @@ const Service = () => {
     });
   }, []);
 
+  const {
+    food_name,
+    image,
+    dedline,
+    quantity,
+    category,
+    location,
+    description,
+    status,
+  
+  }= loader || {}
+  console.log('loaded data are ' , loader);
+
   return (
     <div>
       <div className="grid gap-8 grid-cols-3">
@@ -22,7 +35,7 @@ const Service = () => {
             <div className="card w-96 bg-base-100 shadow-xl hover:scale-110 hover:transition hover:duration-700 hover:ease-in-out">
               <div className="card-body">
                 <h2 className="card-title text-2xl font-bold">
-                  {load.Food_Name}{" "}
+                  {load.food_name}{" "}
                 </h2>
                 <div className="card-actions mt-5">
                   <Link to={`/details/${load._id}`} className="badge badge-outline text-blue-500">
@@ -34,7 +47,7 @@ const Service = () => {
               <figure>
                 <img
                   className="rounded-tr-[80px] rounded-bl-[80px]"
-                  src={load.Food_Image}
+                  src={load.image}
                   alt="Shoes"
                 />
               </figure>
@@ -43,21 +56,21 @@ const Service = () => {
                 <div className="flex gap-2 items-center ">
                   <BsPeopleFill className="text-2xl" />
                   <span className="text-xl">
-                    {load.Food_Quantity} supporters
+                    {load.quantity} supporters
                   </span>
                 </div>
                 <div className="flex gap-2 items-center ">
                   <FcExpired className="text-2xl" />
-                  <span className="text-xl">{load.Expired_Date} expired</span>
+                  <span className="text-xl">{load.dedline} expired</span>
                 </div>
                 <progress
                   className="progress progress-info w-full"
-                  value={load.Food_Quantity}
+                  value={load.quantity}
                   max="10"
                 ></progress>
                 <div className="flex justify-between items-center">
                   <p className="text-left"> Food Quantity</p>
-                  <p className="text-right">{load.Food_Quantity} %</p>
+                  <p className="text-right">{load.quantity} %</p>
                 </div>
               </div>
             </div>
