@@ -9,6 +9,7 @@ import PrivateRoute from "./PrivateRoute";
 import AddFood from "../Add Food/AddFood";
 import MyFood from "../Pages/My Food/MyFood";
 import Update from "../Pages/Update Page/Update";
+import FoodRequest from "../Pages/Food Request/FoodRequest";
 
 
 
@@ -34,7 +35,9 @@ const router = createBrowserRouter([
             },
             {
                 path:'/addfood',
-                element:<AddFood></AddFood>
+                element:<PrivateRoute>
+                    <AddFood></AddFood>
+                </PrivateRoute>
             },
             {
                 path:'/myfood',
@@ -46,6 +49,12 @@ const router = createBrowserRouter([
                 path:'/update/:id',
                 element:<Update></Update>,
                 loader: ({params})=> fetch(`${import.meta.env.VITE_SITE_Link}/food/${params.id}`)
+            },
+            {
+                path:'/request',
+                element:<PrivateRoute>
+                    <FoodRequest></FoodRequest>
+                </PrivateRoute>,
             },
             {
                 path:'/signin',

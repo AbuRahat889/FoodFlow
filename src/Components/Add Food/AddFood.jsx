@@ -5,10 +5,12 @@ import "react-datepicker/dist/react-datepicker.css";
 import { AuthContex } from "../Contex/AuthProvaider";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const AddFood = () => {
   const [startDate, setStartDate] = useState(new Date());
   const { user } = useContext(AuthContex);
+  const navigate = useNavigate()
 
   const handlaAddFood = async (event) => {
     event.preventDefault();
@@ -54,6 +56,7 @@ const AddFood = () => {
         text: "You added a food successfully!!!!",
         icon: "success",
       });
+      navigate('/myfood')
     } catch (error) {
       console.log(error);
       Swal.fire({

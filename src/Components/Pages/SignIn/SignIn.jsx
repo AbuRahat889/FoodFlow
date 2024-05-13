@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContex } from "../../Contex/AuthProvaider";
 import { GoogleAuthProvider } from "firebase/auth";
 import { signInWithPopup } from "firebase/auth";
@@ -10,6 +10,15 @@ import Swal from "sweetalert2";
 const SignIn = () => {
   const { user, signIn } = useContext(AuthContex);
   const googleprovider = new GoogleAuthProvider();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+
+  useEffect(()=>{
+    if(user){
+      navigate('/')
+    }
+  },[])
 
   //sign in email and password
   const handleSignIn = (event) => {
@@ -24,12 +33,12 @@ const SignIn = () => {
     signIn(email, password)
       .then((result) => {
         const user = result.user;
-        alert("susscefull");
         Swal.fire({
             title: "Good job!",
             text: "Sign in successfully!",
             icon: "success"
           });
+          navigate('/')
       })
       .catch((error) => {
         Swal.fire({
@@ -52,6 +61,7 @@ const SignIn = () => {
           text: "Sign in successfully!",
           icon: "success",
         });
+        navigate('/')
       })
       .catch((error) => {
         // Handle Errors here.

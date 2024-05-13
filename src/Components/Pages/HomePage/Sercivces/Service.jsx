@@ -1,11 +1,13 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { BsPeopleFill } from "react-icons/bs";
 import { FcExpired } from "react-icons/fc";
+import { AuthContex } from "../../../Contex/AuthProvaider";
 
 const Service = () => {
   const [loader, setLoader] = useState([]);
+  const {loading } = useContext(AuthContex);
 
   useEffect(() => {
     axios(`${import.meta.env.VITE_SITE_Link}/foods`).then((res) => {

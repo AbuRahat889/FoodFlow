@@ -18,7 +18,7 @@ const Navbar = () => {
       <NavLink to={"/availablefoods"}>Available Foods</NavLink>
       <NavLink to={"/addfood"}>Add Food</NavLink>
       <NavLink to={"/myfood"}>My Foods</NavLink>
-      <NavLink to={"/"}>Food Request</NavLink>
+      <NavLink to={"/request"}>Food Request</NavLink>
     </div>
   );
   

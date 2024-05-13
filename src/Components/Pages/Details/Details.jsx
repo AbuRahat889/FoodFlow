@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContex } from "../../Contex/AuthProvaider";
 import "../../../../src/App.css";
 import { BsPeopleFill } from "react-icons/bs";
@@ -7,11 +7,14 @@ import { FcExpired } from "react-icons/fc";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const Details = () => {
   const [startDate, setStartDate] = useState(new Date());
+  const [requestDate, setRequestDate] = useState(new Date());
   const { user } = useContext(AuthContex);
-  
+  const navigate = useNavigate();
+
   const loader = useLoaderData();
   const {
     food_name,
@@ -24,6 +27,66 @@ const Details = () => {
     status = "requested",
   } = loader || {};
   console.log("this i s  donar :", loader);
+
+  //handle request food
+
+  const handlerequest = async (event) => {
+    event.preventDefault();
+    const email = user?.email;
+    const donar_name = user?.displayName;
+
+    const form = event.target;
+    // const photo =
+    const image = form.photo.value;
+    const dedline = startDate;
+    const requestDate = requestDate;
+    const quantity = form.quantity.value;
+
+    const location = form.location.value;
+    const description = form.description.value;
+    const status = "request";
+
+    //     Donar Name
+    // ● Pickup Location
+    // ● Expire Date
+    // ● Request Date
+    // ● Your Donation Amount
+
+    const requestInfo = {
+      food_name,
+      donar_name,
+      email,
+      location,
+      quantity,
+      dedline,
+      status,
+      requestDate
+    };
+    console.table('request insf' , requestInfo);
+
+    try {
+      const { data } = await axios.post(
+        `${import.meta.env.VITE_SITE_Link}/request`,
+        requestInfo);
+      // alert('food added successsfully!!!!')
+      Swal.fire({
+        title: "Good job!",
+        text: "You request a food successfully!!!!",
+        icon: "success",
+      });
+      navigate('/request');
+    } catch (error) {
+      console.log(error);
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: error,
+        footer: '<a href="#">Why do I have this issue?</a>',
+      });
+    }
+
+
+  };
 
   return (
     <div className="bg-[#d2d5d6]">
@@ -114,7 +177,7 @@ const Details = () => {
                 </figure>
               </div>
 
-              <form>
+              <form onSubmit={handlerequest}>
                 <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
                   <div>
                     <label className="text-gray-700 " htmlFor="job_title">
@@ -154,6 +217,16 @@ const Details = () => {
                       onChange={(date) => setStartDate(date)}
                     />
                   </div>
+                  <div className="flex flex-col gap-2 ">
+                    <label className="text-gray-700">Request Date</label>
+
+                    {/* Date Picker Input Field */}
+                    <DatePicker
+                      
+                      selected={requestDate}
+                      onChange={(date) => setStartDate(date)}
+                    />
+                  </div>
 
                   <div>
                     <label className="text-gray-700 " htmlFor="max_price">
@@ -169,6 +242,19 @@ const Details = () => {
                     />
                   </div>
 
+                  <div>
+                    <label className="text-gray-700 " htmlFor="max_price">
+                      Donar Amount
+                    </label>
+                    <input
+                      defaultValue={quantity}
+                      id="quantity"
+                      name="quantity"
+                      type="number"
+                      className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
+                    />
+                  </div>
+
                   {/* donar informatin  */}
                   <div>
                     <label className="text-gray-700 " htmlFor="max_price">
@@ -177,8 +263,8 @@ const Details = () => {
                     <input
                       defaultValue={loader.donar.donar_name}
                       readOnly
-                      id="location"
-                      name="location"
+                      id="donar_name"
+                      name="donar_name"
                       type="text"
                       className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
                     />
@@ -191,9 +277,9 @@ const Details = () => {
                     <input
                       defaultValue={loader.donar.donar_email}
                       readOnly
-                      id="location"
-                      name="location"
-                      type="text"
+                      id="donar_email"
+                      name="donar_email"
+                      type="email"
                       className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
                     />
                   </div>
@@ -206,9 +292,9 @@ const Details = () => {
                     <input
                       defaultValue={user?.displayName}
                       readOnly
-                      id="location"
-                      name="location"
-                      type="text"
+                      id="name"
+                      name="name"
+                      type="name"
                       className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
                     />
                   </div>
@@ -219,9 +305,9 @@ const Details = () => {
                     <input
                       defaultValue={user?.email}
                       readOnly
-                      id="location"
-                      name="location"
-                      type="text"
+                      id="email"
+                      name="email"
+                      type="email"
                       className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
                     />
                   </div>
