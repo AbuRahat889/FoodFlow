@@ -44,7 +44,7 @@ const AddFood = () => {
         photo: doner_photo,
       },
     };
-    console.table(newFood);
+    // console.table(newFood);
     try {
       const { data } = await axios.post(
         `${import.meta.env.VITE_SITE_Link}/food`,

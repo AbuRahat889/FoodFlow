@@ -12,7 +12,8 @@ const MyFood = () => {
   //find data by donar email
   const getData = async () => {
     const { data } = await axios(
-      `${import.meta.env.VITE_SITE_Link}/foods/${user.email}`
+      `${import.meta.env.VITE_SITE_Link}/foods/${user.email}`,
+      { withCredentials: true }
     );
     setMyfood(data);
   };
@@ -34,7 +35,7 @@ const MyFood = () => {
     }
   };
 
-  console.log(myfood);
+  // console.log(myfood);
   return (
     <div>
       <section className="container px-4 mx-auto pt-12">
@@ -108,8 +109,14 @@ const MyFood = () => {
                         <td className="px-4 py-4 text-sm whitespace-nowrap">
                           <div className="flex items-center gap-x-2">
                             <p
-                              className={`px-3 py-1 ${food.category === 'Available' && 'rounded-full text-blue-500 bg-blue-100/60'}
-                               ${food.category === 'Not Available' && 'rounded-full text-pink-500 bg-pink-100/60'} 
+                              className={`px-3 py-1 ${
+                                food.category === "Available" &&
+                                "rounded-full text-blue-500 bg-blue-100/60"
+                              }
+                               ${
+                                 food.category === "Not Available" &&
+                                 "rounded-full text-pink-500 bg-pink-100/60"
+                               } 
                               text-xs`}
                             >
                               {food.category}

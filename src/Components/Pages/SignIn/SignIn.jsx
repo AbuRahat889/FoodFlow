@@ -27,7 +27,7 @@ const SignIn = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-    console.log(email, password);
+    // console.log(email, password);
     
 
     signIn(email, password)
@@ -55,7 +55,6 @@ const SignIn = () => {
     signInWithPopup(auth, googleprovider)
       .then((result) => {
         const user = result.user;
-        // alert('sign in successfully!! usin google')
         Swal.fire({
           title: "Good job!",
           text: "Sign in successfully!",

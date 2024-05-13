@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCcjq2gwdf1NEdXtqMMPmzjACH5qyg-rVw",
-  authDomain: "foodflow-8400c.firebaseapp.com",
-  projectId: "foodflow-8400c",
-  storageBucket: "foodflow-8400c.appspot.com",
-  messagingSenderId: "754464728081",
-  appId: "1:754464728081:web:95ce9f58305bcb72083db0"
+  apiKey:import.meta.env.VITE_APIKEY,
+  authDomain:import.meta.env.VITE_AUTHDOMAIN,
+  projectId:import.meta.env.VITE_PROJECTID,
+  storageBucket:import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId:import.meta.env.VITE_MESSAGINGSENDERID,
+  appId:import.meta.env.VITE_APPID,
 };
 
 // Initialize Firebase

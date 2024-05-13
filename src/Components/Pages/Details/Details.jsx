@@ -26,7 +26,7 @@ const Details = () => {
     description,
     status = "requested",
   } = loader || {};
-  console.log("this i s  donar :", loader);
+  // console.log("this i s  donar :", loader);
 
   //handle request food
 
@@ -62,7 +62,7 @@ const Details = () => {
       status,
       requestdate
     };
-    console.table('request insf' , requestInfo);
+    // console.table('request insf' , requestInfo);
 
     try {
       const { data } = await axios.post(

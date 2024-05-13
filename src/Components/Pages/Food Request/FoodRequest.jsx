@@ -10,7 +10,7 @@ const FoodRequest = () => {
 
   const getData = async () => {
     const { data } = await axios(
-      `${import.meta.env.VITE_SITE_Link}/request/${user.email}`
+      `${import.meta.env.VITE_SITE_Link}/request/${user.email}`,{ withCredentials: true }
     );
     setLoader(data);
   };
@@ -18,7 +18,7 @@ const FoodRequest = () => {
     getData();
   }, [user]);
 
-  console.log("requset sdf data ", loader);
+  // console.log("requset sdf data ", loader);
   return (
     <div>
       <section className="container px-4 mx-auto pt-12">

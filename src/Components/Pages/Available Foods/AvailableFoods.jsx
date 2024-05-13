@@ -9,7 +9,7 @@ const AvailableFoods = () => {
     event.preventDefault();
     const form = event.target;
     const searchInfo = form.search.value;
-    console.log("click search btn", searchInfo);
+    // console.log("click search btn", searchInfo);
   };
   return (
     <div className="bg-[#d2d5d6]">

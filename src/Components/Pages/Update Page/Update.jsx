@@ -9,7 +9,7 @@ const Update = () => {
     const [startDate, setStartDate] = useState(new Date());
     const loader = useLoaderData();
     const navigate = useNavigate()
-    console.log('update page loade ', loader);
+    
     const  {
         food_name,
         image,
@@ -47,7 +47,7 @@ const Update = () => {
             status,
           };
 
-         console.table(newFood);
+        //  console.table(newFood);
 
          try{
             const {data} = await axios.put(`${import.meta.env.VITE_SITE_Link}/update/${loader._id}`, newFood)

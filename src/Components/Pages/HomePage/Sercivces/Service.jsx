@@ -27,7 +27,7 @@ const Service = () => {
     status,
   
   } = loader || {}
- console.log(loader);
+//  console.log(loader);
 
   return (
     <div>
