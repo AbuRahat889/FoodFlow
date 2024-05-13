@@ -5,6 +5,7 @@ import { GoogleAuthProvider } from "firebase/auth";
 import { signInWithPopup } from "firebase/auth";
 import auth from "../../firebase";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 
 const SignIn = () => {
@@ -75,6 +76,7 @@ const SignIn = () => {
 
   return (
     <div>
+      <Helmet><title>FoodFlow | Sign In</title></Helmet>
       <div className="hero min-h-screen ">
         <div className="">
           <div className="card  w-96  shadow-2xl bg-base-100">

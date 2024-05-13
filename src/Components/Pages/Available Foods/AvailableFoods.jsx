@@ -2,6 +2,7 @@ import { CiSearch } from "react-icons/ci";
 import "../../../../src/App.css";
 import Service from "../HomePage/Sercivces/Service";
 import { IoIosArrowDropdown } from "react-icons/io";
+import { Helmet } from "react-helmet-async";
 
 const AvailableFoods = () => {
   
@@ -13,6 +14,7 @@ const AvailableFoods = () => {
   };
   return (
     <div className="bg-[#d2d5d6]">
+      <Helmet><title>FoodFlow | All Food</title></Helmet>
       <div className="align">
         <div>
           <div>

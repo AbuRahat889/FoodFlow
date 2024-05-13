@@ -1,8 +1,12 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 const ErrorPage = () => {
   return (
     <section className="bg-white ">
+      <Helmet>
+        <title>FoodFlow | Error</title>
+      </Helmet>
       <div className="container min-h-screen px-6 py-12 mx-auto lg:flex lg:items-center lg:gap-12">
         <div className="wf-ull lg:w-1/2">
           <p className="text-sm font-medium text-gray-500">404 error</p>
@@ -34,7 +38,10 @@ const ErrorPage = () => {
               <span>Go back</span>
             </button>
 
-            <Link to='/' className="w-1/2 px-5 py-2 text-sm tracking-wide text-white transition-colors duration-200 bg-gray-500 rounded-lg shrink-0 sm:w-auto hover:bg-gray-600">
+            <Link
+              to="/"
+              className="w-1/2 px-5 py-2 text-sm tracking-wide text-white transition-colors duration-200 bg-gray-500 rounded-lg shrink-0 sm:w-auto hover:bg-gray-600"
+            >
               Take me home
             </Link>
           </div>

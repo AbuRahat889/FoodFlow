@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { Helmet } from "react-helmet-async";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -66,6 +67,7 @@ const Update = () => {
 
     return (
         <div className="flex justify-center items-center min-h-[calc(100vh-306px)] my-12">
+      <Helmet><title>FoodFlow | Update Food</title></Helmet>
       <section className=" p-2 md:p-6 mx-auto bg-white rounded-md shadow-md ">
         <h2 className="text-lg font-semibold text-gray-700 capitalize ">
           Update Food

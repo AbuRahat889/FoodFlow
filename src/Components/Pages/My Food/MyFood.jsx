@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContex } from "../../Contex/AuthProvaider";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const MyFood = () => {
   const { user } = useContext(AuthContex);
@@ -38,6 +39,7 @@ const MyFood = () => {
   // console.log(myfood);
   return (
     <div>
+      <Helmet><title>FoodFlow | My Added Food</title></Helmet>
       <section className="container px-4 mx-auto pt-12">
         <div className="flex items-center gap-x-3">
           <h2 className="text-lg font-medium text-gray-800 ">My Posted Jobs</h2>

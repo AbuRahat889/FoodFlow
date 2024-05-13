@@ -8,6 +8,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const Details = () => {
   const [startDate, setStartDate] = useState(new Date());
@@ -90,6 +91,7 @@ const Details = () => {
 
   return (
     <div className="bg-[#d2d5d6]">
+      <Helmet><title>FoodFlow | Food Details</title></Helmet>
       <div className="align mt-10 py-10">
         <h1 className="text-6xl font-bold">{food_name} </h1>
 

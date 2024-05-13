@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContex } from "../../Contex/AuthProvaider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const SignUp = () => {
   const { createUser } = useContext(AuthContex);
@@ -39,7 +40,7 @@ const SignUp = () => {
 
   return (
     <div>
-      
+      <Helmet><title>FoodFlow | Sign Up</title></Helmet>
       <div className="hero min-h-screen ">
         <div className="">
           <div className="card  w-96  shadow-2xl bg-base-100">

@@ -6,6 +6,7 @@ import { AuthContex } from "../Contex/AuthProvaider";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const AddFood = () => {
   const [startDate, setStartDate] = useState(new Date());
@@ -69,6 +70,7 @@ const AddFood = () => {
   };
   return (
     <div className="flex justify-center items-center min-h-[calc(100vh-306px)] my-12">
+      <Helmet><title>FoodFlow | Add Food</title></Helmet>
       <section className=" p-2 md:p-6 mx-auto bg-white rounded-md shadow-md ">
         <h2 className="text-lg font-semibold text-gray-700 capitalize ">
           Add a food
