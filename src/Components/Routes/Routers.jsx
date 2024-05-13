@@ -8,6 +8,7 @@ import AvailableFoods from "../Pages/Available Foods/AvailableFoods";
 import PrivateRoute from "./PrivateRoute";
 import AddFood from "../Add Food/AddFood";
 import MyFood from "../Pages/My Food/MyFood";
+import Update from "../Pages/Update Page/Update";
 
 
 
@@ -40,6 +41,11 @@ const router = createBrowserRouter([
                 element:<PrivateRoute>
                     <MyFood></MyFood>
                 </PrivateRoute>
+            },
+            {
+                path:'/update/:id',
+                element:<Update></Update>,
+                loader: ({params})=> fetch(`${import.meta.env.VITE_SITE_Link}/food/${params.id}`)
             },
             {
                 path:'/signin',
