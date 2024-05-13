@@ -14,10 +14,10 @@ const Action = () => {
         </div>
 
         <ActionCard></ActionCard>
-        <Service></Service>
+        <Service></Service> 
         <div className='mt-10'>
           <button  className="btn btn-outline text-[#febb00] hover:bg-black hover:text-[#febb00]">
-            <Link className='py-1 px-4 text-xl font-semibold'>Show All</Link>
+            <Link to={'/availablefoods'} className='py-1 px-4 text-xl font-semibold'>Show All</Link>
           </button>
         </div>
       </div>

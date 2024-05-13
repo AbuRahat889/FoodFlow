@@ -39,7 +39,7 @@ const Details = () => {
     // const photo =
     const image = form.photo.value;
     const dedline = startDate;
-    const requestDate = requestDate;
+    const requestdate = requestDate;
     const quantity = form.quantity.value;
 
     const location = form.location.value;
@@ -60,7 +60,7 @@ const Details = () => {
       quantity,
       dedline,
       status,
-      requestDate
+      requestdate
     };
     console.table('request insf' , requestInfo);
 

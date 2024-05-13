@@ -74,10 +74,8 @@ const FoodRequest = () => {
                         scope="col"
                         className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500"
                       >
-                         status
-                        
+                        status
                       </th>
-
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200 ">
@@ -94,12 +92,13 @@ const FoodRequest = () => {
                         <td className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
                           {load.quantity}
                         </td>
-                        
+
                         <td
                           title=""
                           className="px-4 py-4 text-sm text-gray-500  whitespace-nowrap"
                         >
-                          {load.requestDate}
+                        {/* requestdate */}
+                          {load.requestdate}
                         </td>
                         <td className="px-4 py-4 text-sm whitespace-nowrap">
                           <div className="flex items-center gap-x-2">
@@ -107,7 +106,7 @@ const FoodRequest = () => {
                               className="px-3 py-1 rounded-full text-blue-500 bg-blue-100/60
                                  text-xs"
                             >
-                               {load.status}
+                              {load.status}
                             </p>
                           </div>
                         </td>
