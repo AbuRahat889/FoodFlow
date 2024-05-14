@@ -12,7 +12,7 @@ const MyFood = () => {
   //find add food info by donar email
   const getData = async () => {
     const { data } = await axios(
-      `${import.meta.env.VITE_SITE_Link}/foods?/${user.email}`,
+      `${import.meta.env.VITE_SITE_Link}/foods/${user.email}`,
       { withCredentials: true }
     );
     setMyfood(data);
@@ -35,7 +35,7 @@ const MyFood = () => {
     }
   };
 
-  // console.log(myfood);
+  console.log("my food is ",myfood);
   return (
     <div>
       <Helmet>

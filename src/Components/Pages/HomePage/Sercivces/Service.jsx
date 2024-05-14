@@ -11,7 +11,7 @@ const Service = () => {
 
   useEffect(() => {
     axios(`${import.meta.env.VITE_SITE_Link}/foods`).then((res) => {
-      console.log(res.data);
+      // console.log(res.data);
       setLoader(res.data);
     });
   }, []);
