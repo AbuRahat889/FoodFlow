@@ -1,7 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 .poetsen {
-    font-family: "Poetsen One", sans-serif;
-  }
+  font-family: "Poetsen One", sans-serif;
+}
+
+.bebas{
+  font-family: "Bebas Neue", sans-serif;
+
+}
+
 
 @tailwind base;
 @tailwind components;

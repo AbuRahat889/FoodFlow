@@ -38,23 +38,23 @@ const AuthProvaider = ({ children }) => {
       const logedUser = { email: userEmail };
       setUser(currentUser);
       setLoading(false);
-    //   console.log("currentUse :", currentUser);
+      //   console.log("currentUse :", currentUser);
 
       if (currentUser) {
         axios
-          .post(`http://localhost:5000/jwt`, logedUser, {
+          .post(`${import.meta.env.VITE_SITE_Link}/jwt`, logedUser, {
             withCredentials: true,
           })
           .then((res) => {
             console.log("token pai ", res.data);
           });
-      }else{
+      } else {
         axios
-          .post(`http://localhost:5000/logout`, logedUser, {
+          .post(`${import.meta.env.VITE_SITE_Link}/logout`, logedUser, {
             withCredentials: true,
           })
           .then((res) => {
-            console.log( res.data);
+            console.log(res.data);
           });
       }
     });

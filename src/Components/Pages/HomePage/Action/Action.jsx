@@ -15,7 +15,7 @@ const Action = () => {
 
         <ActionCard></ActionCard>
         <Service></Service> 
-        <div className='mt-10'>
+        <div className='mt-10 pb-28'>
           <button  className="btn btn-outline text-[#febb00] hover:bg-black hover:text-[#febb00]">
             <Link to={'/availablefoods'} className='py-1 px-4 text-xl font-semibold'>Show All</Link>
           </button>
