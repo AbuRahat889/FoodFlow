@@ -1,11 +1,12 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContex } from "../../Contex/AuthProvaider";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
 
 const SignUp = () => {
   const { createUser } = useContext(AuthContex);
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -26,6 +27,7 @@ const SignUp = () => {
             text: "Sign in successfully!",
             icon: "success"
           });
+          navigate(to='/')
       })
       .catch((error) => {
         // alert(error);
