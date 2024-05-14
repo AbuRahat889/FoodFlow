@@ -6,7 +6,7 @@ import { AuthContex } from "../../Contex/AuthProvaider";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContex);
-  //logot btn
+  // console.log(user);displayName
   const handleLogout = () => {
     logOut();
   };
@@ -18,6 +18,7 @@ const Navbar = () => {
       <NavLink to={"/addfood"}>Add Food</NavLink>
       <NavLink to={"/myfood"}>My Foods</NavLink>
       <NavLink to={"/request"}>Food Request</NavLink>
+      
     </div>
   );
 
@@ -63,11 +64,22 @@ const Navbar = () => {
               >
                 Sign out
               </NavLink>
-              <div className="avatar online">
-                <div className="w-16 rounded-full">
-                  <img src={user.photoURL} />
-                </div>
-              </div>
+              {
+                user.photoURL ? (<div className="avatar online">
+                <button className="w-16 rounded-full tooltip tooltip-left" data-tip={user.displayName}>
+                  <img 
+                  className="rounded-full"
+                   src={user.photoURL} />
+                </button>
+              </div>): (<div className="avatar online">
+                <button className="w-16 rounded-full tooltip tooltip-left" data-tip={user.displayName}>
+                  <img 
+                  className="rounded-full"
+                   src="https://i.ibb.co/QQtCMqv/avater.png" />
+                </button>
+              </div>)
+              }
+              
             </>
           ) : (
             <NavLink to={"/signin"} className="text-xl mr-8 p-4 border-x-2">

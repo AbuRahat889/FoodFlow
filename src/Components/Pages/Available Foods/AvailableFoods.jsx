@@ -5,7 +5,6 @@ import { IoIosArrowDropdown } from "react-icons/io";
 import { Helmet } from "react-helmet-async";
 
 const AvailableFoods = () => {
-  
   const handleSearch = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -14,7 +13,9 @@ const AvailableFoods = () => {
   };
   return (
     <div className="bg-[#d2d5d6]">
-      <Helmet><title>FoodFlow | All Food</title></Helmet>
+      <Helmet>
+        <title>FoodFlow | All Food</title>
+      </Helmet>
       <div className="align">
         <div>
           <div>
@@ -25,7 +26,7 @@ const AvailableFoods = () => {
           </div>
 
           <div className=" flex justify-center">
-            <div className="flex justify-center items-center gap-2 mt-5 bg-[#febb00] w-2/5  rounded-xl">
+            <div className="flex justify-center items-center gap-2 mt-5 bg-[#febb00] w-2/5  rounded-xl py-2">
               <form onSubmit={handleSearch}>
                 <label className="input input-bordered flex items-center gap-2">
                   <input
@@ -38,20 +39,20 @@ const AvailableFoods = () => {
                     className="px-2 text-xl"
                     type="submit"
                     value="search"
-                    
                   />
                 </label>
               </form>
 
               <div>
-                <details className="dropdown">
-                  <summary className="m-1 btn px-10 text-xl">
-                    Sort by <IoIosArrowDropdown />
-                  </summary>
-                  <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-lg w-24">
-                    <li>Expair Date</li>
-                  </ul>
-                </details>
+                <select
+                  name="category"
+                  id="category"
+                  className="border p-2 rounded-md"
+                >
+                  <option value="All">All</option>
+                  <option value="Expired Date">Expired Date</option>
+                  <option value="Quantity">Qualtity</option>
+                </select>
               </div>
             </div>
           </div>

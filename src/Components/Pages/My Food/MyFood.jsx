@@ -8,12 +8,11 @@ const MyFood = () => {
   const { user } = useContext(AuthContex);
   const [myfood, setMyfood] = useState([]);
   const [deleteInfo, setDeleteInfo] = useState([]);
-  //   console.log('user are ', user.email);
 
-  //find data by donar email
+  //find add food info by donar email
   const getData = async () => {
     const { data } = await axios(
-      `${import.meta.env.VITE_SITE_Link}/foods/${user.email}`,
+      `${import.meta.env.VITE_SITE_Link}/foods?email=${user.email}`,
       { withCredentials: true }
     );
     setMyfood(data);
@@ -39,13 +38,15 @@ const MyFood = () => {
   // console.log(myfood);
   return (
     <div>
-      <Helmet><title>FoodFlow | My Added Food</title></Helmet>
+      <Helmet>
+        <title>FoodFlow | My Added Food</title>
+      </Helmet>
       <section className="container px-4 mx-auto pt-12">
         <div className="flex items-center gap-x-3">
-          <h2 className="text-lg font-medium text-gray-800 ">My Posted Jobs</h2>
+          <h2 className="text-lg font-medium text-gray-800 ">My Posted Food</h2>
 
           <span className="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full ">
-            {myfood.length} Jobs
+            {myfood.length} Foods
           </span>
         </div>
 
