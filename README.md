@@ -1,10 +1,14 @@
- Site link: https://foodflow-8400c.web.app
+
  
-# React + Vite
+[Live Site](https://foodflow-8400c.web.app) <br/>
+[Server site github](https://github.com/AbuRahat889/FoodFlow-Server) <br/>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# FoodFlow  <br/>
+# How to use:  <br/>
+-install- npm i  <br/>
+-install- express, cors, mongodb  <br/>
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Features <br/>
+-Authentication  <br/>
+-Donate Food  <br/>
+-Food Request   <br/>
